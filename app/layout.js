@@ -2,6 +2,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 
+import {ContactForm} from "../components/ContactForm";
+
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
 //   subsets: ["latin"],
@@ -21,8 +23,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>{children}
-        <Header/>
-      </body>
+        <div>
+<Header/>
+       
+        {children}
+        <ContactForm />
+        </div>
+        </body>
     </html>
   );
 }
