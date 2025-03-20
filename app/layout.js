@@ -1,5 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/Header";
+
 import {ContactForm} from "../components/ContactForm";
 
 // const geistSans = Geist({
@@ -20,8 +22,10 @@ import {ContactForm} from "../components/ContactForm";
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="bg-white">
+      <body>{children}
         <div>
+<Header/>
+       
         {children}
         <ContactForm />
         </div>
