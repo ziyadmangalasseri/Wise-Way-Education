@@ -4,6 +4,8 @@ import Header from "@/components/Header";
 
 import {ContactForm} from "../components/ContactForm";
 import { BookConsultation } from "@/components/BookConsultation";
+import Footer from "@/components/Footer";
+
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -30,6 +32,7 @@ export default function RootLayout({ children }) {
         {children}
         <BookConsultation />
         <ContactForm />
+        <Footer/>
         </div>
         </body>
     </html>
