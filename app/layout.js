@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 
 import {ContactForm} from "../components/ContactForm";
+import { BookConsultation } from "@/components/BookConsultation";
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -27,6 +28,7 @@ export default function RootLayout({ children }) {
 <Header/>
        
         {children}
+        <BookConsultation />
         <ContactForm />
         </div>
         </body>

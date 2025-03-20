@@ -19,28 +19,28 @@ export const ContactForm = () => {
           <input
             type="text"
             placeholder="First Name"
-            className="p-6 bg-[#A8DADC] rounded-tl-3xl placeholder-black rounded-br-3xl outline-none w-full text-lg"
+            className="p-6 bg-[#A8DADC] rounded-tl-3xl text-black placeholder-black rounded-br-3xl outline-none w-full text-lg"
           />
           <input
             type="text"
             placeholder="Last Name"
-            className="p-6 bg-[#A8DADC] rounded-tl-3xl placeholder-black rounded-br-3xl outline-none w-full text-lg"
+            className="p-6 bg-[#A8DADC] rounded-tl-3xl text-black placeholder-black rounded-br-3xl outline-none w-full text-lg"
           />
           <input
             type="email"
             placeholder="Email address"
-            className="p-6 bg-[#A8DADC] rounded-tl-3xl placeholder-black rounded-br-3xl outline-none w-full text-lg"
+            className="p-6 bg-[#A8DADC] rounded-tl-3xl text-black placeholder-black rounded-br-3xl outline-none w-full text-lg"
           />
           <input
             type="tel"
             placeholder="Phone"
-            className="p-6 bg-[#A8DADC] rounded-tl-3xl placeholder-black rounded-br-3xl outline-none w-full text-lg"
+            className="p-6 bg-[#A8DADC] rounded-tl-3xl text-black placeholder-black rounded-br-3xl outline-none w-full text-lg"
           />
         </div>
 
         <textarea
           placeholder="Write a message"
-          className="w-full h-32 mt-4 p-6 bg-[#A8DADC] rounded-tl-3xl placeholder-black rounded-br-3xl text-lg outline-none resize-none"
+          className="w-full h-32 mt-4 p-6 bg-[#A8DADC] rounded-tl-3xl text-black placeholder-black rounded-br-3xl text-lg outline-none resize-none"
         ></textarea>
 
         {/* Submit Button */}
