@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>{children}
-        <div>
+        <div className="bg-white">
 <Header/>
        
         {children}
