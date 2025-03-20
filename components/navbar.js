@@ -3,7 +3,7 @@ import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation"; // Get current path
 
-const Navbar = () => {
+ const Navbar = () => {
   const pathname = usePathname(); // Get the active page
 
   return (

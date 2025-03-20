@@ -6,7 +6,7 @@ const Footer = () => {
     <footer className="bg-[#1a1f29] text-white py-8 px-4">
       <div className="container mx-auto">
         <div className="flex flex-col items-center">
-          {/* Logo - Responsive sizing */}
+          {/* Logo*/}
           <div className="mb-6 sm:mb-8">
             <Image 
               src="/images/wise-way-logo.png" 
@@ -18,7 +18,7 @@ const Footer = () => {
             />
           </div>
           
-          {/* Navigation Links - Improved mobile layout */}
+          {/* Navigation Links*/}
           <nav className="flex flex-wrap justify-center gap-3 sm:gap-6 mb-8 text-sm sm:text-base">
             {['Home', 'About Us', 'Courses', 'Admissions', 'Events', 'Contact Us'].map((item) => (
               <Link 
@@ -31,7 +31,7 @@ const Footer = () => {
             ))}
           </nav>
           
-          {/* Contact Information - Better stack for small screens */}
+          {/* Contact Information*/}
           <div className="grid lg:grid-cols-3 gap-6 w-full max-w-4xl mb-8">
             {/* Phone */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
