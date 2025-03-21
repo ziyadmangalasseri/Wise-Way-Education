@@ -31,7 +31,7 @@ export default async function Universities() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-10">
-      <h1 className="text-7xl font-bold text-center my-6 text-gray-900">
+      <h1 className="text-5xl lg:text-7xl  font-bold text-center my-6 text-gray-900">
         Universities
       </h1>
 
@@ -61,7 +61,7 @@ export default async function Universities() {
                 </h2>
                 <p className="mt-2 text-black">
                   {uni.description.length > 100
-                    ? uni.description.slice(0, 150) + "..." // Truncate  after 50 char
+                    ? uni.description.slice(0, 150) + "..." // Truncate  after 150 char
                     : uni.description || "No description available."}
                 </p>
               </div>
