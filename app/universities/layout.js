@@ -1,10 +1,3 @@
-
-
-export default function UniversitiesLayout({children}){
-    return(
-        <div>
-            {children}
-        </div>
-    )
-    
-};
+export default function UniversitiesLayout({ children }) {
+  return <div>{children}</div>;
+}

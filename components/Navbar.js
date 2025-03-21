@@ -60,7 +60,6 @@ const Navbar = () => {
                 { name: "Colleges", path: "/colleges" },
                 { name: "Courses", path: "/courses" },
                 { name: "Contact", path: "/contact" },
-                
               ].map((link) => (
                 <li key={link.path}>
                   <Link

@@ -58,7 +58,7 @@ const Header = () => {
         </button>
 
         {/* Contact Info and Social Icons - Hidden on mobile */}
-        <div className="hidden md:flex flex-col sm:flex-row gap-4 md:gap-6 lg:gap-8 items-center md:mr-4 lg:mr-8 xl:mr-12">
+        <div className="hidden md:flex flex-col sm:flex-row gap-4 md:gap-6 lg:gap-8 items-center xl:mr-[200px] mb-10">
           {/* Email and Phone */}
           <div className="flex flex-col sm:flex-row gap-4 md:gap-8 lg:gap-16">
             <div className="flex items-center gap-2 md:gap-3">
@@ -66,7 +66,9 @@ const Header = () => {
                 <Mail className="text-emerald-500 w-4 h-4 md:w-5 md:h-5" />
               </div>
               <div>
-                <h4 className="text-xs md:text-sm font-bold text-black">Email Address</h4>
+                <h4 className="text-xs md:text-sm font-bold text-black">
+                  Email Address
+                </h4>
                 <p className="text-xs font-bold text-gray-600">
                   hello@wiseway.com
                 </p>
@@ -77,7 +79,9 @@ const Header = () => {
                 <Phone className="text-emerald-500 w-4 h-4 md:w-5 md:h-5" />
               </div>
               <div>
-                <h4 className="text-xs md:text-sm font-bold text-black">24/7 In Touch</h4>
+                <h4 className="text-xs md:text-sm font-bold text-black">
+                  24/7 In Touch
+                </h4>
                 <p className="text-xs font-bold text-gray-600">
                   +91 9000023211
                 </p>
@@ -91,18 +95,34 @@ const Header = () => {
           {/* Social Icons */}
           <div className="flex gap-2 md:gap-3">
             {[
-              { src: "/images/instagram.svg", alt: "Instagram", className: "text-pink-500 hover:text-pink-600" },
-              { src: "/images/facebook.svg", alt: "Facebook", className: "text-blue-600 hover:text-blue-700" },
-              { src: "/images/linkedin.svg", alt: "LinkedIn", className: "text-blue-700 hover:text-blue-800" },
-              { src: "/images/x.svg", alt: "Twitter", className: "text-black hover:text-gray-800" },
+              {
+                src: "/images/instagram.svg",
+                alt: "Instagram",
+                className: "text-pink-500 hover:text-pink-600",
+              },
+              {
+                src: "/images/facebook.svg",
+                alt: "Facebook",
+                className: "text-blue-600 hover:text-blue-700",
+              },
+              {
+                src: "/images/linkedin.svg",
+                alt: "LinkedIn",
+                className: "text-blue-700 hover:text-blue-800",
+              },
+              {
+                src: "/images/x.svg",
+                alt: "Twitter",
+                className: "text-black hover:text-gray-800",
+              },
             ].map((icon, index) => (
               <Link href="#" key={index} aria-label={icon.alt}>
-                <Image 
-                  src={icon.src} 
-                  alt={icon.alt} 
-                  width={32} 
-                  height={20} 
-                  className={`${icon.className} w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8`} 
+                <Image
+                  src={icon.src}
+                  alt={icon.alt}
+                  width={32}
+                  height={20}
+                  className={`${icon.className} w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8`}
                 />
               </Link>
             ))}
@@ -111,8 +131,9 @@ const Header = () => {
       </div>
 
       {/* Navigation - Centered on all screens */}
-      <div className={`
-        ${isMobileMenuOpen ? 'block' : 'hidden'} 
+      <div
+        className={`
+        ${isMobileMenuOpen ? "block" : "hidden"} 
         md:block 
         md:absolute 
         w-full 
@@ -122,10 +143,18 @@ const Header = () => {
         md:mt-[-20px] 
         lg:mt-[-30px]
         z-30
-        ${isMobileMenuOpen ? 'fixed top-0 left-0 w-full h-full bg-white z-40 pt-16' : ''}
-      `}>
+        ${
+          isMobileMenuOpen
+            ? "fixed top-0 left-0 w-full h-full bg-white z-40 pt-16"
+            : ""
+        }
+      `}
+      >
         <div className="flex justify-center">
-          <Navbar isMenuOpen={isMobileMenuOpen} toggleMenu={() => setIsMobileMenuOpen(!isMobileMenuOpen)} />
+          <Navbar
+            isMenuOpen={isMobileMenuOpen}
+            toggleMenu={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          />
         </div>
       </div>
 
