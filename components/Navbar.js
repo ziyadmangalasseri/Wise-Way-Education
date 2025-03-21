@@ -6,13 +6,6 @@ import { usePathname } from "next/navigation";
 const Navbar = () => {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-<<<<<<< HEAD
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-=======
->>>>>>> 7e258aec4e91be4ead3c117752a9470b62438191
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -67,10 +60,6 @@ const Navbar = () => {
                 { name: "Colleges", path: "/colleges" },
                 { name: "Courses", path: "/courses" },
                 { name: "Contact", path: "/contact" },
-<<<<<<< HEAD
-=======
-                
->>>>>>> 7e258aec4e91be4ead3c117752a9470b62438191
               ].map((link) => (
                 <li key={link.path}>
                   <Link
