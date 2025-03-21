@@ -10,7 +10,6 @@ const Navbar = () => {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
-
   return (
     <div>
       {/* Mobile Menu Button */}
