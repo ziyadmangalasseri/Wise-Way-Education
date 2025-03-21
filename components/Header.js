@@ -1,11 +1,8 @@
-// components/Header.jsx
 import Image from "next/image";
 import Link from "next/link";
-import {
-  Mail,
-  Phone,
-} from "lucide-react"; // Import Lucide icons
-import Navbar from "./Navbar.js";
+import { Mail, Phone } from "lucide-react";
+import Navbar from "./Navbar";
+
 
 const Header = () => {
   return (
@@ -13,22 +10,23 @@ const Header = () => {
       {/* Top Bar */}
       <div className="bg-white py-4 px-6 md:px-12 flex flex-col md:flex-row justify-between items-center">
         {/* Logo */}
-        <div className="mb-4 ml-2 md:mb-0">
-          <Link href="/">
+        <div className="mb-4 md:mb-0">
+          <Link href="/" aria-label="Home">
             <Image
               src="/images/wise-way-logo.png"
               alt="Wise Way Logo"
               width={100}
               height={70}
               className="h-auto"
+              priority
             />
           </Link>
         </div>
 
         {/* Contact Info and Social Icons */}
-        <div className="flex flex-col mr-[200px] mb-14 md:flex-row gap-4 md:gap-8 items-center">
-          {/* Email */}
-          <div className="flex items-center gap-16">
+        <div className="flex flex-col md:flex-row gap-4  md:mb-[50px] md:mr-[200px] md:gap-8 items-center">
+          {/* Email and Phone */}
+          <div className="flex flex-col md:flex-row gap-4 md:gap-16">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-full border-2 border-emerald-500 flex items-center justify-center bg-gray-50">
                 <Mail className="text-emerald-500 w-5 h-5" />
@@ -40,7 +38,6 @@ const Header = () => {
                 </p>
               </div>
             </div>
-            {/* Phone */}
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-full border-2 border-emerald-500 flex items-center justify-center bg-gray-50">
                 <Phone className="text-emerald-500 w-5 h-5" />
@@ -54,27 +51,28 @@ const Header = () => {
             </div>
           </div>
 
-          <div className="h-10 w-[2px] bg-gray-300"></div>
+          {/* Divider */}
+          <div className="hidden md:block h-10 w-[2px] bg-gray-300"></div>
+
           {/* Social Icons */}
-          <div className="flex gap-3 ml-0 md:ml-6">
-            <Link href="#" className="text-pink-500 hover:text-pink-600">
-              <Image src="/images/instagram.svg" alt="Instagram" width={40} height={24} />
-            </Link>
-            <Link href="#" className="text-blue-600 hover:text-blue-700">
-              <Image src="/images/facebook.svg" alt="Facebook" width={40} height={24} />
-            </Link>
-            <Link href="#" className="text-blue-700 hover:text-blue-800">
-              <Image src="/images/linkedin.svg" alt="LinkedIn" width={40} height={24} />
-            </Link>
-            <Link href="#" className="text-black hover:text-gray-800">
-              <Image src="/images/x.svg" alt="Twitter" width={40} height={24} />
-            </Link>
+          <div className="flex gap-3">
+            {[
+              { src: "/images/instagram.svg", alt: "Instagram", className: "text-pink-500 hover:text-pink-600" },
+              { src: "/images/facebook.svg", alt: "Facebook", className: "text-blue-600 hover:text-blue-700" },
+              { src: "/images/linkedin.svg", alt: "LinkedIn", className: "text-blue-700 hover:text-blue-800" },
+              { src: "/images/x.svg", alt: "Twitter", className: "text-black hover:text-gray-800" },
+            ].map((icon, index) => (
+              <Link href="#" key={index} aria-label={icon.alt}>
+                <Image src={icon.src} alt={icon.alt} width={40} height={24} className={icon.className} />
+              </Link>
+            ))}
+
           </div>
         </div>
       </div>
 
       {/* Navigation */}
-      <div className="absolute mt-[-40px] ml-[180px] flex flex-row justify-center">
+      <div className="hidden md:block absolute mt-[-40px] ml-[180px]">
         <Navbar />
       </div>
 
@@ -84,9 +82,10 @@ const Header = () => {
           <Image
             src="/images/graduation-students.jpg"
             alt="Graduating Students"
-            layout="fill"
-            objectFit="cover"
+            fill
+            style={{ objectFit: "cover" }}
             className="opacity-80"
+            priority
           />
           <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
             <h1 className="text-4xl md:text-6xl font-bold text-white text-center">
