@@ -3,8 +3,7 @@ import Link from "next/link";
 import { Mail, Phone } from "lucide-react";
 import Navbar from "./Navbar";
 
-
-const Header = ({pageTitle}) => {
+const Header = () => {
   return (
     <header className="w-full">
       {/* Top Bar */}
@@ -89,7 +88,7 @@ const Header = ({pageTitle}) => {
           />
           <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
             <h1 className="text-4xl md:text-6xl font-bold text-white text-center">
-              {pageTitle}
+              About Us
             </h1>
           </div>
         </div>
