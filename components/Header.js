@@ -58,7 +58,7 @@ const Header = () => {
         </button>
 
         {/* Contact Info and Social Icons - Hidden on mobile */}
-        <div className="hidden md:flex flex-col sm:flex-row gap-4 md:gap-6 lg:gap-8 items-center md:mr-4 lg:mr-8 xl:mr-12">
+        <div className="hidden md:flex flex-col sm:flex-row gap-4 md:gap-6 lg:gap-8 items-center xl:mr-[200px] mb-10">
           {/* Email and Phone */}
           <div className="flex flex-col sm:flex-row gap-4 md:gap-8 lg:gap-16">
             <div className="flex items-center gap-2 md:gap-3">
