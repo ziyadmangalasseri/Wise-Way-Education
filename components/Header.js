@@ -1,10 +1,7 @@
 // components/Header.jsx
 import Image from "next/image";
 import Link from "next/link";
-import {
-  Mail,
-  Phone,
-} from "lucide-react"; // Import Lucide icons
+import { Mail, Phone } from "lucide-react"; // Import Lucide icons
 import Navbar from "./Navbar.js";
 
 const Header = () => {
@@ -58,13 +55,28 @@ const Header = () => {
           {/* Social Icons */}
           <div className="flex gap-3 ml-0 md:ml-6">
             <Link href="#" className="text-pink-500 hover:text-pink-600">
-              <Image src="/images/instagram.svg" alt="Instagram" width={40} height={24} />
+              <Image
+                src="/images/instagram.svg"
+                alt="Instagram"
+                width={40}
+                height={24}
+              />
             </Link>
             <Link href="#" className="text-blue-600 hover:text-blue-700">
-              <Image src="/images/facebook.svg" alt="Facebook" width={40} height={24} />
+              <Image
+                src="/images/facebook.svg"
+                alt="Facebook"
+                width={40}
+                height={24}
+              />
             </Link>
             <Link href="#" className="text-blue-700 hover:text-blue-800">
-              <Image src="/images/linkedin.svg" alt="LinkedIn" width={40} height={24} />
+              <Image
+                src="/images/linkedin.svg"
+                alt="LinkedIn"
+                width={40}
+                height={24}
+              />
             </Link>
             <Link href="#" className="text-black hover:text-gray-800">
               <Image src="/images/x.svg" alt="Twitter" width={40} height={24} />
@@ -84,8 +96,8 @@ const Header = () => {
           <Image
             src="/images/graduation-students.jpg"
             alt="Graduating Students"
-            layout="fill"
-            objectFit="cover"
+            fill
+            style={{ objectFit: "cover" }}
             className="opacity-80"
           />
           <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
