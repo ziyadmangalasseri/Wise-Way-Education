@@ -8,7 +8,6 @@ import { useState } from "react";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
   return (
     <header className="w-full relative">
       {/* Top Bar - hidden on mobile */}
