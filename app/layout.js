@@ -1,8 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
-
-import { ContactForm } from "../components/ContactForm";
+import { ContactForm } from "@/components/ContactForm";
 import { BookConsultation } from "@/components/BookConsultation";
 import Footer from "@/components/Footer";
 
@@ -24,14 +23,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>
-        <div className="bg-white">
-          <Header />
-          {children}
-          <BookConsultation />
-          <ContactForm />
-          <Footer />
-        </div>
+      <body className="bg-white">
+        <Header />
+        <main>{children}</main>
+        <BookConsultation />
+        <ContactForm />
+        <Footer />
       </body>
     </html>
   );
