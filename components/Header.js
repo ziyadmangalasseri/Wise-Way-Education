@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Mail, Phone } from "lucide-react";
 import Navbar from "./Navbar";
 
+
 const Header = () => {
   return (
     <header className="w-full">
@@ -65,6 +66,7 @@ const Header = () => {
                 <Image src={icon.src} alt={icon.alt} width={40} height={24} className={icon.className} />
               </Link>
             ))}
+
           </div>
         </div>
       </div>
@@ -80,8 +82,8 @@ const Header = () => {
           <Image
             src="/images/graduation-students.jpg"
             alt="Graduating Students"
-            layout="fill"
-            objectFit="cover"
+            fill
+            style={{ objectFit: "cover" }}
             className="opacity-80"
             priority
           />
