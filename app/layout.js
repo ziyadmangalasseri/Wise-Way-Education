@@ -25,11 +25,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="bg-white">
-          <Header />
+        <Header />
         <main>{children}</main>
         <BookConsultation />
-          <ContactForm />
-          <Footer />
+        <ContactForm />
+        <Footer />
       </body>
     </html>
   );
