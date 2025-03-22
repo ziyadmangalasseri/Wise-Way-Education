@@ -1,5 +1,4 @@
 import Link from 'next/link';
-
 export default async function Courses() {
   try {
     const response = await fetch('https://wiseway.wmsapphub.com/api/user/getcourse/', {
@@ -35,7 +34,7 @@ export default async function Courses() {
               }}
             >
               <div className="h-52 overflow-hidden">
-                <img 
+                <img
                   src={`https://wiseway.wmsapphub.com/${course.image}`} 
                   alt={course.name}
                   className="w-full h-full object-cover"
