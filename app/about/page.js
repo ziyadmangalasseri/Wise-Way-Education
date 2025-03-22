@@ -1,6 +1,6 @@
 "use client";
-import React, { useEffect, useState } from "react";
 import axios from "axios";
+import React, { useEffect, useState } from "react";
 
 const About = () => {
   const [aboutData, setAboutData] = useState([]);
@@ -10,6 +10,7 @@ const About = () => {
   useEffect(() => {
     const fetchAboutData = async () => {
       try {
+        const axios = (await import("axios")).default
         const response = await axios.post(
           "https://wiseway.wmsapphub.com/api/user/getaboutus/",
           {},

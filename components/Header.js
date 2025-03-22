@@ -79,6 +79,8 @@ const Header = () => {
             style={{ objectFit: "cover" }}
             className="opacity-80"
             priority
+            sizes="(max-width: 600px) 100vw, (max-width: 1200px) 100vw, 100vw"
+
           />
           <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center px-4">
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white text-center">
