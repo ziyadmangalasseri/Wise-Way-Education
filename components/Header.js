@@ -4,8 +4,33 @@ import Image from "next/image";
 import Link from "next/link";
 import { Mail, Phone } from "lucide-react";
 import Navbar from "./Navbar";
+import { usePathname } from "next/navigation";
 
 const Header = () => {
+  const pathname = usePathname();
+  
+  // Function to get header title based on current route
+  const getHeaderTitle = () => {
+    switch(pathname) {
+      case '/':
+        return 'Welcome to Wise Way';
+      case '/about':
+        return 'About Us';
+      case '/services':
+        return 'Our Services';
+      case '/universities':
+        return 'Explore Top Universities';
+      case '/colleges':
+        return 'Discover Premier Colleges';
+      case '/courses':
+        return 'Courses We Offer';
+      case '/contact':
+        return 'Contact Us';
+      default:
+        return 'Wise Way Education';
+    }
+  };
+
   return (
     <header className="w-full relative">
       {/* Top Bar - Visible on all screens */}
@@ -80,11 +105,10 @@ const Header = () => {
             className="opacity-80"
             priority
             sizes="(max-width: 600px) 100vw, (max-width: 1200px) 100vw, 100vw"
-
           />
           <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center px-4">
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white text-center">
-              About Us
+              {getHeaderTitle()}
             </h1>
           </div>
         </div>
