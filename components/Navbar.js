@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -12,10 +13,12 @@ const Navbar = () => {
   };
   return (
     <div>
-      {/* Mobile Menu Button */}
+      {/* Mobile & Tablet Menu Button */}
       <button
         onClick={toggleMenu}
-        className="md:hidden fixed top-4 right-4 z-50 p-2 bg-emerald-500 rounded-full"
+        className={`xl:hidden fixed top-4 right-4 z-50 p-3 mt-3 mr-3 bg-emerald-500 rounded-full shadow-lg transition-transform duration-300 ease-in-out transform hover:scale-110 active:scale-95 ${
+          isMenuOpen ? "rotate-90" : "rotate-0"
+        }`}
         aria-label="Toggle menu"
       >
         <svg
@@ -41,17 +44,12 @@ const Navbar = () => {
           )}
         </svg>
       </button>
-
       {/* Navigation */}
-      <nav
-        className={`bg-white w-full md:w-[1150px] md:h-[80px] md:rounded-full flex items-center shadow-[0_-5px_10px_rgba(0,0,0,0.2),5px_0_15px_rgba(0,0,0,0.2)] relative z-10 ${
-          isMenuOpen ? "block" : "hidden md:flex"
-        }`}
-      >
-        <div className="mx-auto flex flex-col md:flex-row md:ml-16 items-center justify-between w-full px-4">
+      <nav className="bg-white w-full xl:w-[1150px] xl:h-[80px] xl:rounded-full items-center shadow-[0_-5px_10px_rgba(0,0,0,0.2),5px_0_15px_rgba(0,0,0,0.2)] relative z-10 hidden xl:flex">
+      <div className="hidden mx-auto lg:flex flex-col md:flex-row md:ml-16 items-center justify-between w-full px-4">
           {/* Navigation Links */}
           <div className="flex flex-col md:flex-row items-center font-bold w-full">
-            <ul className="flex flex-col md:flex-row text-lg gap-5 w-full">
+            <ul className="flex flex-col md:flex-row text-lg lg:gap-5 w-full">
               {[
                 { name: "Home", path: "/" },
                 { name: "About", path: "/about" },
@@ -72,7 +70,7 @@ const Navbar = () => {
                   >
                     {link.name}
                     {pathname === link.path && (
-                      <span className="absolute bottom-2 left-1/2 transform -translate-x-1/2 h-0.5 bg-emerald-500 w-3/4"></span>
+                      <span className="absolute bottom-2 left-1/2 transform -translate-x-1/2 h-0.5 bg-emerald-500 w-2/4"></span>
                     )}
                   </Link>
                 </li>
@@ -91,6 +89,77 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
+      {/* Mobile & Tablet Sidebar Menu */}
+      <div
+        className={`fixed inset-0 bg-white shadow-xl z-50 flex flex-col w-4/5 max-w-xs h-full px-4 py-3 transition-transform duration-300 ease-in-out transform ${
+          isMenuOpen ? "translate-x-0" : "-translate-x-full"
+        }`}
+      >
+        {/* Logo Section */}
+        <div className="flex items-center space-x-2 mb-10">
+          <Image
+            src="/images/wise-way-logo.png"
+            alt="Logo"
+            width={80}
+            height={40}
+          />
+          {/* <span className="text-lg font-bold">Brand Name</span> */}
+        </div>
+
+        {/* Navigation Links */}
+        <div className="flex flex-col mt-[-40px]">
+          <ul className="flex flex-col space-y-4 items-center text-lg">
+            {[
+              "Home",
+              "About",
+              "Services",
+              "Universities",
+              "Colleges",
+              "Courses",
+              "Contact",
+            ].map((name) => {
+              const path = name === "Home" ? "/" : `/${name.toLowerCase()}`;
+              return (
+                <li key={path}>
+                  <Link
+                    href={path}
+                    className={`relative block py-2 transition duration-200 text-center ${
+                      pathname === path
+                        ? "text-emerald-500 font-extrabold"
+                        : "text-gray-800 hover:text-emerald-500"
+                    }`}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {name}
+                    {pathname === path && (
+                      <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 h-0.5 bg-emerald-500 w-3/4"></span>
+                    )}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+
+          {/* Enquire Now Button */}
+          <div className="mt-8 flex justify-center">
+            <Link
+              href="/enquire"
+              className="bg-emerald-500 hover:bg-emerald-600 text-white text-lg font-bold py-3 px-6 rounded-full transition duration-300"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Enquire Now
+            </Link>
+          </div>
+
+          {/* Close Button */}
+          <button
+            onClick={toggleMenu}
+            className="text-center text-gray-600 text-lg mt-10 button-press" // Added button-press class
+          >
+            Close
+          </button>
+        </div>
+      </div>
     </div>
   );
 };
