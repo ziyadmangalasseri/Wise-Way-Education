@@ -1,27 +1,18 @@
 "use client";
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
-import dynamic from "next/dynamic"; // Import dynamic for client-side only modules
+import { usePathname } from "next/navigation";
 import Image from "next/image";
-
-// Dynamically import usePathname from next/navigation
-const usePathname = dynamic(() => import("next/navigation").then((mod) => mod.usePathname), { ssr: false });
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [pathname, setPathname] = useState("");
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      setPathname(window.location.pathname);
-    }
-  }, []);
+  const pathname = usePathname(); 
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const links = useMemo(() => [
+  const links = [
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
     { name: "Services", path: "/services" },
@@ -29,7 +20,7 @@ const Navbar = () => {
     { name: "Colleges", path: "/colleges" },
     { name: "Courses", path: "/courses" },
     { name: "Contact", path: "/contact" },
-  ], []);
+  ];
 
   return (
     <div>
